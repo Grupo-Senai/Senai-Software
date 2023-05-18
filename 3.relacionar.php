@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($superusuario && password_verify($senha, $superusuario['senha'])) {
     // É um superusuário/administrador, redirecionar para a página de administração
-    header('Location: Agendamentos.php');
+    header('Location: Menu.php');
     exit;
   }
 
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($usuario && password_verify($senha, $usuario['senha'])) {
     // É um usuário comum, redirecionar para a página principal
-    header('Location: Agendamentos.php');
+    header('Location: Menu.php');
     exit;
   } else {
     // Login inválido, exibir mensagem de erro

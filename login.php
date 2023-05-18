@@ -10,8 +10,8 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    /*$loginAdmin = "admin"; // Substitua pelo valor desejado
-    $senhaAdmin = 'fixfixfix'; // Substitua 'senha_admin' pela senha do superusuário
+    $loginAdmin = "admin"; // Substitua pelo valor desejado
+    $senhaAdmin = 'admin'; // Substitua 'senha_admin' pela senha do superusuário
 
     // Gerar o hash da senha
     $senhaHash = password_hash($senhaAdmin, PASSWORD_DEFAULT);
