@@ -62,13 +62,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $hashedPassword = password_hash($novaSenha, PASSWORD_DEFAULT);
 
     try {
+        /*
         // Atualiza a senha e a confirmação de senha na tabela "cadastro"
         $sql1 = "UPDATE cadastro SET senha = :hashedPassword, checksenha = :hashedPassword WHERE email = :usuario;";
         $stmt1 = $pdo->prepare($sql1);
         $stmt1->bindParam(':hashedPassword', $hashedPassword);
         $stmt1->bindParam(':usuario', $usuario);
         $stmt1->execute();
-
+*/
         // Atualiza a senha na tabela "users"
         $sql2 = "UPDATE users SET senha = :hashedPassword WHERE email = :usuario;";
         $stmt2 = $pdo->prepare($sql2);

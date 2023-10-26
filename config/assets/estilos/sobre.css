@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+  background-color: #e0e0e0;
+  font-family: "Montserrat", sans-serif;
+  height: 50%;
+  margin: 0;
+  padding: 0;
+  height: 500px;
+  position: relative;
+  overflow: auto;
+}
+
+.navbar {
+  background-color: #005ca9;
+  background-position: top;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+  display: flex;
+  padding-bottom: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+
+.navbar-container {
+  /*align-items: flex-start;*/
+  justify-content: space-between;
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo {
+  /* Movemos essas tags para o .navbar-container
+    display: flex;
+    align-items: center;
+    */
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  /*object-fit: cover;
+    /*width: 10rem;*/
+  height: 3rem;
+  width: 10rem;
+  animation: fade-in 3s forwards;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+  /* cor de fundo ao passar o mouse */
+  /*border-radius: 200px;
+    margin-right: 200px;*/
+}
+
+.navbar-logo:hover {
+  box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);
+  transform: scale(1.05);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.fa {
+  font-family: "Font Awesome";
+}
+
+.fa .fafa-bars::before {
+  content: "\f0c9";
+}
+
+#menu-icon {
+  display: none;
+  /* Oculta o ícone em dispositivos desktop */
+}
+
+.navbar-menu li {
+  text-align: right;
+  margin-right: 4rem;
+  margin-right: 30px;
+}
+
+.navbar-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.navbar-menu li:last-child {
+  margin-right: 30px;
+  /* Removendo margin do último elemento */
+}
+
+#conteudo {
+  font-size: 26px;
+  display: grid;
+  padding-left: 0em;
+  line-height: 1.5;
+  align-content: flex-start;
+  justify-content: start;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-right: 0rem;
+  font-weight: 600;
+  max-width: 50%;
+}
+
+.navbar-menu li a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.sair {
+  font-family: sans-serif;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1.2em;
+  border: none;
+  padding: 0.5rem 1em;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+}
+
+.logosenai {
+  position: relative;
+  left: 4rem;
+  top: 1rem;
+  width: 10rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.containerBody {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.card-body ul li {
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+
+
+
+
+.rodape {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  /* padding-top: auto; */
+  font-weight: bold;
+  object-position: bottom;
+}

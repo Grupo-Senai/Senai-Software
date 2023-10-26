@@ -1,5 +1,5 @@
 <?php
-require_once './session.php';
+include_once './session.php';
 
 /*
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
@@ -78,6 +78,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
           <li><a href="./cancelar.php">Cancelar</a></li>
           <li><a href="./cancelamentos.php">Cancelamentos</a></li>
           <li><a href="./Agendamentos.php">Agendamentos</a></li>
+          <li><a href="./sobre.html">Sobre</a></li>
           <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
         </ul>
       </div>

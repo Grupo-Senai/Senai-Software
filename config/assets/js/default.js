@@ -1,4 +1,5 @@
-/*const urlParams = new URLSearchParams(window.location.search);
+/*
+const urlParams = new URLSearchParams(window.location.search);
 const erroParam = urlParams.get('error');
 
 if (erroParam === '1001') {
