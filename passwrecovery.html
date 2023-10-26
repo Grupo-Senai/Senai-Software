@@ -38,8 +38,8 @@
     <form method="POST" id="forms" action="./reset_password.php">
       <h2>RECUPERAÇÃO DE SENHA</h2>
       <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="Digite o email" required onfocus="this.placeholder = ''"
-        onblur="this.placeholder = 'Digite o email'" autocomplete="off" />
+      <input type="text" id="usuario" name="usuario" placeholder="Digite o email" required
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o email'" autocomplete="off" />
       <p id="emailErro1" style="color: red;">Email não coincide!</p><br>
 
       <p id="emailErro"></p>
@@ -63,8 +63,7 @@
     </form>
   </div>
   <script>
-    const email = document.getElementById('email');
-    const cEmail = document.getElementById('confirmaremail');
+    const email = document.getElementById('usuario');
     const emailErro = document.getElementById('emailErro1');
     const senha = document.getElementById("novaSenha");
     const cSenha = document.getElementById("Csenha");
@@ -74,7 +73,6 @@
       if (email.value !== cEmail.value) {
         emailErro.style.display = 'block';
         email.value = '';
-        cEmail.value = '';
       } else {
         emailErro.style.display = 'none';
       }

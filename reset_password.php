@@ -38,16 +38,15 @@ $dbname = 'biblioteca';
 $username = 'root';
 $password = '';
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conn->exec("SET FOREIGN_KEY_CHECKS=0");
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec("SET FOREIGN_KEY_CHECKS=0");
 } catch (PDOException $e) {
     // Caso contrário, exibe a mensagem de erro padrão
     echo "Erro: " . $e->getMessage();
     exit;
 }
 
-// Verifica se os campos foram enviados via POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtém os dados do formulário
     $usuario = $_POST["usuario"];
@@ -61,30 +60,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Atualiza a senha no banco de dados
     $hashedPassword = password_hash($novaSenha, PASSWORD_DEFAULT);
+
     try {
-        /* bloco 1 atualiza senha*/
-        $sql1 = "UPDATE cadastro SET senha = :hashedPassword WHERE email = :usuario || nome = :usuario;";
-        $stmt = $conn->prepare($sql1);
-        $stmt->bindParam(':hashedPassword', $hashedPassword);
-        $stmt->bindParam(':usuario', $usuario);
-        $stmt->bindParam(':Csenha', $Csenha);
-        $stmt->execute();
+        // Atualiza a senha e a confirmação de senha na tabela "cadastro"
+        $sql1 = "UPDATE cadastro SET senha = :hashedPassword, checksenha = :hashedPassword WHERE email = :usuario;";
+        $stmt1 = $pdo->prepare($sql1);
+        $stmt1->bindParam(':hashedPassword', $hashedPassword);
+        $stmt1->bindParam(':usuario', $usuario);
+        $stmt1->execute();
+
+        // Atualiza a senha na tabela "users"
+        $sql2 = "UPDATE users SET senha = :hashedPassword WHERE email = :usuario;";
+        $stmt2 = $pdo->prepare($sql2);
+        $stmt2->bindParam(':hashedPassword', $hashedPassword);
+        $stmt2->bindParam(':usuario', $usuario);
+        $stmt2->execute();
+
+        echo "Senha atualizada com sucesso!";
+        echo "<script> setTimeout(function() { window.location.href = 'login.html'; }, 5000); </script>";
     } catch (PDOException $e) {
-        //  echo "Erro de entrada duplicada: " . $e->getMessage();
+        // Verifique o erro do banco de dados
         if ($e->errorInfo[1] == 1062) {
-            // Checa se o erro é código 1062 (Duplicate entry)
             echo "Erro: Por favor, utilize uma senha diferente da anterior. ";
             echo "<script>alert('Erro: Por favor, utilize uma senha diferente da anterior.');</script>";
         } else {
-            // Caso contrário, exibe a mensagem de erro padrão
             echo "Erro: " . $e->getMessage();
         }
-        exit;
     }
-    try {
-        /* bloco 2 atualiza checksenha*/
+}
+
+/*try {
+        /* bloco 2 atualiza checksenha
         $sql1 = "UPDATE cadastro SET checksenha = :hashedPassword WHERE email = :usuario || nome = :usuario;";
-        $stmt = $conn->prepare($sql1);
+        $stmt = $pdo->prepare($sql1);
         $stmt->bindParam(':hashedPassword', $hashedPassword);
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':Csenha', $Csenha);
@@ -102,9 +110,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
     try {
-        /* bloco 3 atualiza users */
+        /* bloco 3 atualiza users 
         $sql = "UPDATE users SET senha = :hashedPassword WHERE email = :usuario || login = :usuario;";
-        $stmt = $conn->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':hashedPassword', $hashedPassword);
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':Csenha', $Csenha);
@@ -116,15 +124,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     /*
     $sql = "UPDATE users SET senha = :hashedPassword WHERE email = :usuario || login = :usuario;";
     $stmt = $conn->prepare($sql);
-*/
+
     try {
         $stmt->execute();
         echo "Senha atualizada com sucesso!";
-        echo "<script> setTimeout(function() { window.location.href = 'login.html'; }, 5000); </script>";
+        echo "<script> setTimeout(function() { window.location.href = 'index.html'; }, 5000); </script>";
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
         exit;
     }
 }
+*/
+
 // Fecha a conexão com o banco de dados
-$conn = null;
+$pdo = null;
+?>
