@@ -47,13 +47,14 @@ try {
         )",
 
         "CREATE TABLE IF NOT EXISTS agendamentos(
-            id INT(11) NOT NULL AUTO_INCREMENT,
+            id INT(50) NOT NULL AUTO_INCREMENT,
             nome VARCHAR(50) NOT NULL,
             data DATE NOT NULL,
             hora_inicio TIME NOT NULL,
             hora_termino TIME NOT NULL,
             quantidade_alunos INT(11) NOT NULL,
             curso VARCHAR(50) NOT NULL,
+            id_agendamento VARCHAR(50) NOT NULL,
             PRIMARY KEY(id)
             )",
 
