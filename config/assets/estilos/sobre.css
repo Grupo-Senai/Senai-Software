@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
 body {
   background-color: #e0e0e0;
@@ -11,6 +12,9 @@ body {
   overflow: auto;
 }
 
+header{
+  display: flex;
+}
 .navbar {
   background-color: #005ca9;
   background-position: top;
@@ -23,7 +27,9 @@ body {
   width: 100%;
   z-index: 999;
 }
-
+h1{
+  text-align: center;
+}
 
 .navbar-container {
   /*align-items: flex-start;*/
@@ -84,12 +90,33 @@ body {
 .fa .fafa-bars::before {
   content: "\f0c9";
 }
-
+.titulo {
+  display: flex;
+  font-family: "montserrat", "sans-serif";
+  font-size: 2.6rem;
+  align-content: center;
+  max-width: 800px;
+  margin: 3rem auto 0rem auto;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
 #menu-icon {
   display: none;
   /* Oculta o ícone em dispositivos desktop */
 }
-
+/*
 .navbar-menu li {
   text-align: right;
   margin-right: 4rem;
@@ -97,18 +124,18 @@ body {
   margin-bottom: 9px;
   
 }
-
+*/
 .navbar-menu li a {
   color: #ffffff;
   text-decoration: none;
 }
 
-
+/*
 .navbar-menu li:last-child {
   margin-right: 30px;
-  /* Removendo margin do último elemento */
+  /* Removendo margin do último elemento
 }
-
+*/
 #conteudo {
   font-size: 26px;
   display: grid;
@@ -224,4 +251,83 @@ ul {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 0px;
+}
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: top;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+    padding-bottom: 2px;
+    z-index: 999;
+    text-align: center;
+    border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
+    max-width: 60%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 25%;
+  }
+  body {
+    display: block;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    justify-content: center;
+  }
+
+  /*body {
+    margin-top: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }*/
+
+  .navbar-menu {
+    list-style-type: none;
+    justify-content: center;
+    display: grid;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  .navbar-container {
+    /*align-items: flex-start;*/
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    justify-items: center;
+    place-items: center;
+    position: relative;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  .navbar-logo {
+    box-sizing: content-box;
+  }
+
+  #menu-icon {
+    place-items: center;
+    display: block;
+  }
+  
+
 }

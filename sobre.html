@@ -32,6 +32,7 @@
 
     <!-- Adicione a biblioteca de ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 
 </head>
@@ -64,7 +65,9 @@
     </header>
 
 
-    <h1>Sobre nós</h1>
+    <div class="titulo">
+        <h1>Sobre nós</h1>
+      </div>
     <div class="containerBody">
         <div class="card-body">
             <h5 class="card-title">Quem somos?</h5>
@@ -95,6 +98,52 @@
                 para que os alunos do SENAI possam ter acesso a esses materiais de forma mais fácil e rápida.</p>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+          // Define a função toggleDropdown
+          function toggleDropdown() {
+            $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
+          }
+    
+          // Adiciona um evento de clique ao elemento com o id "menu-icon"
+          $("#menu-icon").click(toggleDropdown);
+    
+          // Adiciona um evento de redimensionamento ao documento
+          $(window).on("resize", function() {
+            // Verifica se a largura da janela é maior que 768 pixels
+            if ($(window).width() > 768) {
+              // Mostra a lista suspensa
+              $("#menu-list").show();
+            } else {
+              // Oculta a lista suspensa
+              $("#menu-list").hide();
+            }
+          });
+        });
+        // Obtenha o botão do menu e o elemento navbar
+        const menuBtn = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+    
+        // Manipule o evento de clique do botão
+        menuBtn.addEventListener('click', function() {
+          // Adicione a classe "rounded" ao elemento navbar
+          navbar.classList.remove('rounded');
+        });
+    
+        /*
+        document.addEventListener("DOMContentLoaded", function() {
+          var menuIcon = document.getElementById("menu-icon");
+          var menuList = document.getElementById("menu-list");
+    
+          menuIcon.addEventListener("click", function() {
+            if (menuList.style.display === "none" || menuList.style.display === "") {
+              menuList.style.display = "block";
+            } else {
+              menuList.style.display = "none";
+            }
+          });
+        });*/
+      </script>
     <footer>
         <div class="rodape">
             <p>
