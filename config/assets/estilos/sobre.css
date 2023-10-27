@@ -56,6 +56,7 @@ body {
 .navbar-logo:hover {
   box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);
   transform: scale(1.05);
+  margin-right: 6px;
 }
 
 @keyframes fade-in {
@@ -93,6 +94,8 @@ body {
   text-align: right;
   margin-right: 4rem;
   margin-right: 30px;
+  margin-bottom: 9px;
+  
 }
 
 .navbar-menu li a {
@@ -125,52 +128,19 @@ body {
   text-decoration: none;
 }
 
-.sair {
-  font-family: sans-serif;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #333;
-  background-color: #005ca9;
-  color: #ffffff;
-  font-size: 1.2em;
-  border: none;
-  padding: 0.5rem 1em;
-  border-radius: 3rem;
-  cursor: pointer;
-  transition: background-color 0.1s ease;
-  box-sizing: border-box;
-  margin: 0 auto;
-  display: block;
-}
-ul{
-  margin-block-start: 0rem;
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 0px;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 0px;
-}
-
 .logosenai {
   position: relative;
   left: 4rem;
   top: 1rem;
   width: 10rem;
+  margin-left: 6px;
 }
 
-h1 {
-  font-size: 2rem;
+h5 {
   font-weight: 600;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0px;
   text-align: center;
+  color: #005ca9;
 }
 
 .containerBody {
@@ -186,8 +156,8 @@ h1 {
 .card-title {
   font-size: 1.5rem;
   font-weight: 600;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  color: #005ca9;
 }
 
 .card-body {
@@ -214,17 +184,29 @@ h1 {
   padding: 0.5rem;
 }
 
+.card-body li a:hover{
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #005ca9;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+
 .card-text {
   font-size: 1.2rem;
   font-weight: 600;
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
   text-align: center;
 }
 
-
-
-
+.card-text :last-child{
+  padding-top: 30px;
+}
 
 .rodape {
   font-family: "Montserrat", sans-serif;
@@ -232,4 +214,14 @@ h1 {
   /* padding-top: auto; */
   font-weight: bold;
   object-position: bottom;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
 }
