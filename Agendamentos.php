@@ -40,6 +40,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 </head>
 
@@ -59,12 +61,18 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <li><a href="./cancelar.php">Cancelar</a></li>
                     <li><a href="./cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="https://docs.google.com/forms/d/1EMKHJaqvL2lA1U9gmPW-AQwqyvDS0fgdP-ckh85ECwo/edit" target="_blank">Feedback</a></li>
                     <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>
+
+            <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
         </nav>
     </header>
-
     <div id="app">
         <form method="post" onsubmit="exibirAlerta(event)">
 
@@ -115,7 +123,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                         <th>Data</th>
                         <th>Hora de Início</th>
                         <th>Hora de Término</th>
-                        <th>Quantidade de Alunos</th>
+                        <th>Alunos</th>
                         <th>Curso</th>
                     </tr>
                 </thead>
@@ -133,6 +141,52 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                 </tbody>
             </table>
     </div>
+    <script>
+        $(document).ready(function() {
+            // Define a função toggleDropdown
+            function toggleDropdown() {
+                $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
+            }
+
+            // Adiciona um evento de clique ao elemento com o id "menu-icon"
+            $("#menu-icon").click(toggleDropdown);
+
+            // Adiciona um evento de redimensionamento ao documento
+            $(window).on("resize", function() {
+                // Verifica se a largura da janela é maior que 768 pixels
+                if ($(window).width() > 768) {
+                    // Mostra a lista suspensa
+                    $("#menu-list").show();
+                } else {
+                    // Oculta a lista suspensa
+                    $("#menu-list").hide();
+                }
+            });
+        });
+        // Obtenha o botão do menu e o elemento navbar
+        const menuBtn = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+
+        // Manipule o evento de clique do botão
+        menuBtn.addEventListener('click', function() {
+            // Adicione a classe "rounded" ao elemento navbar
+            navbar.classList.remove('rounded');
+        });
+
+        /*
+        document.addEventListener("DOMContentLoaded", function() {
+          var menuIcon = document.getElementById("menu-icon");
+          var menuList = document.getElementById("menu-list");
+
+          menuIcon.addEventListener("click", function() {
+            if (menuList.style.display === "none" || menuList.style.display === "") {
+              menuList.style.display = "block";
+            } else {
+              menuList.style.display = "none";
+            }
+          });
+        });*/
+    </script>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <footer>
         <div class="rodape">

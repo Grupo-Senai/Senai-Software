@@ -73,9 +73,16 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <li><a href="./Agendamentos.php">Agendamentos</a></li>
                     <li><a href="./cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="https://docs.google.com/forms/d/1EMKHJaqvL2lA1U9gmPW-AQwqyvDS0fgdP-ckh85ECwo/edit" target="_blank">Feedback</a></li>
                     <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>
+
+            <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
         </nav>
     </header>
 

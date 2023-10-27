@@ -97,7 +97,6 @@ h1 {
     opacity: 1;
   }
 }
-
 .navbar-menu li {
   text-align: center;
   margin-right: 4rem;
@@ -328,10 +327,6 @@ h1 {
   box-sizing: border-box;
 }
 
-.navbar-menu li a {
-  color: #ffffff;
-  text-decoration: none;
-}
 
 .navbar-menu li:last-child {
   margin-right: 30px;
@@ -386,7 +381,7 @@ tbody {
   }
   .navbar-menu li {
     justify-content: stretch;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     margin-right: 0;
   }
   #menu-icon {
@@ -396,6 +391,9 @@ tbody {
   #menu-list {
     display: none;
     margin-top: 0px;
+  }
+  .fa, .fab, .fad, .fal, .far, .fas {
+    font-style: oblique;
   }
   .forms {
     max-width: 100%;
@@ -424,14 +422,15 @@ tbody {
     z-index: 999;
     text-align: center;
     border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
+    max-width: 60%;
     overflow: hidden;
-    width: 50%;
     justify-content: center;
     align-items: center;
+    width: 45%;
     position: relative;
   }
   .navbar-container {
-    /* align-items: flex-start; */
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
     align-items: center;
