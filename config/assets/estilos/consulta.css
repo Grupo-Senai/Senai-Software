@@ -41,7 +41,10 @@ header {
   font-weight: 900;
 }
 
-
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
+}
 
 .navbar-logo:hover {
   box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);

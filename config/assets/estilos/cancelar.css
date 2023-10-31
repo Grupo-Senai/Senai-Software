@@ -124,7 +124,10 @@ header {
 #botaosair:hover {
   color: red;
 }
-
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
+}
 h1 {
   color: #005ca9;
   font-size: 24px;

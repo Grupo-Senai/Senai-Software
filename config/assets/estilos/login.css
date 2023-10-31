@@ -61,7 +61,10 @@ body {
   color: #333;
   font-weight: bold;
 }
-
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
+}
 #app {
   max-width: 40%;
   margin: 0 auto;

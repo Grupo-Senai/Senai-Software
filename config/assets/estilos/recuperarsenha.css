@@ -24,7 +24,10 @@ label {
   animation: fade-in 3s forwards;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
+}
 @keyframes fade-in {
   0% {
     opacity: 0;
