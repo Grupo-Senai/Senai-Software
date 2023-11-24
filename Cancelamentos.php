@@ -99,7 +99,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             ?>
             <div class="table-container">
 
-                <table>
+                <table class="responsive-table">
                     <thead>
                         <tr>
                             <th>Nome do instrutor</th>
