@@ -41,7 +41,8 @@ header {
   font-weight: 900;
 }
 
-.fa, .fas {
+.fa,
+.fas {
   font-weight: 900;
   color: #000000;
 }
@@ -50,10 +51,12 @@ header {
   box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);
   transform: scale(1.05);
 }
+
 #menu-icon {
   display: none;
   /* Oculta o ícone em dispositivos desktop */
 }
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -158,6 +161,7 @@ header {
   color: #ffffff;
   text-decoration: none;
 }
+
 /*
 .navbar-menu li:last-child {
   margin-right: 30px;
@@ -260,7 +264,7 @@ th:last-child {
     border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
     max-width: 60%;
     overflow: hidden;
-    width:max-content !important;  
+    width: max-content !important;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -294,9 +298,11 @@ th:last-child {
     margin: 0;
     padding-bottom: 1rem;
   }
-  .fa-2x{
+
+  .fa-2x {
     font-size: 1.5em !important;
   }
+
   .navbar-logo {
     box-sizing: content-box;
   }
@@ -337,13 +343,17 @@ th:last-child {
   form {
     display: grid;
     text-align: center;
-    align-content: space-around;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
   }
 
   .table-container {
     display: grid;
+    justify-items: start;
   }
-
+  
   h1 {
     text-align: center;
     justify-content: center;
