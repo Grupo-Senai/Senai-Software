@@ -204,24 +204,18 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         SELECT COUNT(*) FROM agendamentos
         WHERE data = :data AND (
         (hora_inicio <= :hora_inicio AND hora_termino > :hora_inicio) OR
-        (hora_inicio < :hora_termino AND hora_termino >= :hora_termino)
-        )
-        ");
+        (hora_inicio < :hora_termino AND hora_termino >= :hora_termino) OR (hora_inicio >= :hora_inicio AND hora_termino <= :hora_termino)
+        )");
         $stmt->bindValue(':data', $data);
         $stmt->bindValue(':hora_inicio', $hora_inicio);
         $stmt->bindValue(':hora_termino', $hora_termino);
         $stmt->execute();
         $count = $stmt->fetchColumn();
-        if ($count > 0) {
-            /*$_SESSION['error_message'] = "Já existe um agendamento neste horário!";*/
-            // Exibir uma mensagem de erro se já existe um agendamento para essa data e hora
-            echo "<div class='error-message' style='color: yellow; text-align: center; font-size:20px; font-weight:600;margin: 1rem;'>Já existe um agendamento neste horário!</div>";
-
-            // Insere os dados na tabela "agendamentos"
-        }
 
         if (isWeekend($data) || isHoliday($data)) {
             echo "<div class='error-message' style='color: red; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Não é possível agendar nos sábados e domingos.</div>";
+        } else if ($count > 0) {
+            echo "<div class='error-message' style='color: red; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Já existe um agendamento para essa data e horário.</div>";
         } else {
             // Verificar se é um dia útil e horário válido
             $dayOfWeek = date('N', strtotime($data));
