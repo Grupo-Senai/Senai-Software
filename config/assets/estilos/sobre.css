@@ -15,7 +15,6 @@ body {
   box-sizing: border-box;
   font-size: 1.2rem;
 }
-
 header {
   display: flex;
 }
@@ -136,6 +135,9 @@ h1 {
 .navbar-menu li a {
   color: #ffffff;
   text-decoration: none;
+}
+#botaoSair:hover{
+  color: red;
 }
 
 /*
