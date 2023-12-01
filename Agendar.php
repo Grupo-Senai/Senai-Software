@@ -216,7 +216,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
             echo "<div class='error-message' style='color: red; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Não é possível agendar nos sábados e domingos.</div>";
         } else if ($count > 0) {
             echo "<div class='error-message' style='color: red; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Já existe um agendamento para essa data e horário.</div>";
-        } else {
+        } else {    
             // Verificar se é um dia útil e horário válido
             $dayOfWeek = date('N', strtotime($data));
             if (isValidTime($dayOfWeek, $hora_inicio)) {
